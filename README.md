@@ -1,2 +1,2 @@
 # MSTerminal
- Microsoft Termincal app customizations
+ Microsoft Terminal app customizations
