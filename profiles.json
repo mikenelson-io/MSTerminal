@@ -1,3 +1,5 @@
+// This file has been deprecated to settings.json
+// Do not use this file
 
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
