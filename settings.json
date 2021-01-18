@@ -16,10 +16,6 @@
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": true,
     "theme": "system",
-    "confirmCloseAllTabs": false,
-    "multiLinePasteWarning": false,
-    "tabWidthMode": "titleLength",
-
 
     "profiles":
     {
@@ -48,7 +44,7 @@
                 "historySize": 9001,
                 "fontFace": "Delugia Nerd Font",
                 "fontSize": 13,
-                "useAcrylic": false,
+                "useAcrylic": true,
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
                 "experimental.retroTerminalEffect": false
@@ -57,28 +53,54 @@
                 //"tabTitle": " ",
             },
             {
-                // PoSH 5.1 ADMIN Noprofile
-                "guid": "{61c54bbd-c2c6-5271-42e7-009a87ff44cc}",
-                "name": "PoSH 5.1 ADMIN Noprofile",
+                // cmd.exe profile
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "CMD",
                 "cursorColor": "#FFFFFF",
-                "commandline": "cmd.exe /c gsudo powershell.exe -noprofile",
+                "commandline": "cmd.exe",
                 "hidden": false,
-                "backgroundImage": "ms-appdata:///roaming/powershell-pulse.gif",
+                "backgroundImage": "ms-appdata:///roaming/cmd-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
                 "backgroundImageStretchMode": "none",
-                "colorScheme": "Campbell Powershell",
-                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "colorScheme": "Retro",
+                "icon": "ms-appdata:///roaming/cmd.png",
+                "startingDirectory": "%USERPROFILE%",
+                "acrylicOpacity": 0.8,
+                "closeOnExit": true,
+                "historySize": 9001,
+                "fontFace": "PxPlus IBM VGA8",
+                "fontSize": 13,
+                "useAcrylic": false,
+                "padding": "0, 0, 0, 0",
+                "snapOnInput": true,
+                "experimental.retroTerminalEffect": false,
+                "suppressApplicationTitle": true,
+                "tabTitle": "CMD "
+            },
+            {
+                // cmd.exe profile as Admin
+                "guid": "{0caa0dad-35be-5f56-b2ff-afceeeaa6101}",
+                "name": "Admin CMD",
+                "cursorColor": "#FFFFFF",
+                "commandline": "gsudo cmd.exe",
+                "hidden": false,
+                "backgroundImage": "ms-appdata:///roaming/cmd-pulse.gif",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.5,
+                "backgroundImageStretchMode": "none",
+                "colorScheme": "Campbell",
+                "icon": "ms-appdata:///roaming/cmd.png",
+                "startingDirectory": "%USERPROFILE%",
                 "acrylicOpacity": 0.8,
                 "closeOnExit": true,
                 "historySize": 9001,
                 "fontFace": "Delugia Nerd Font",
                 "fontSize": 13,
-                "useAcrylic": false,
+                "useAcrylic": true,
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
                 "experimental.retroTerminalEffect": false
-                //"startingDirectory" : "%USERPROFILE%",
                 //"suppressApplicationTitle": true,
                 //"tabTitle": " ",
             },
@@ -136,7 +158,7 @@
                 "useAcrylic": true
             },
             {
-                // PoSH 7.x ADMIN NoProfile
+                // PoSH 7.x NoProfile as Admin
                 "acrylicOpacity": 0.8,
                 "backgroundImage": "ms-appdata:///roaming/pwshpreview-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
@@ -154,65 +176,38 @@
                 "hidden": false,
                 "historySize": 9001,
                 "icon": "ms-appdata:///roaming/pwsh.png",
-                "name": "PoSH 7 ADMIN NoProfile",
+                "name": "Admin PoSH 7 NoProfile",
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
                 //"startingDirectory": "%USERPROFILE%",
                 //"suppressApplicationTitle": true,
                 //"tabTitle": " ",
-                "useAcrylic": false
+                "useAcrylic": true
             },
             {
-                // cmd.exe profile
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "CMD",
-                "cursorColor": "#FFFFFF",
-                "commandline": "cmd.exe",
+                // PoSH 6.x
+                "guid": "{049b895c-b0b8-55de-bce3-27d3220d7ab3}",
                 "hidden": false,
-                "backgroundImage": "ms-appdata:///roaming/cmd-pulse.gif",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.5,
-                "backgroundImageStretchMode": "none",
-                "colorScheme": "Retro",
-                "icon": "ms-appdata:///roaming/cmd.png",
-                "startingDirectory": "%USERPROFILE%",
+                "name": "PoSH 6.2.4",
+                "source": "Windows.Terminal.PowershellCore",
                 "acrylicOpacity": 0.8,
+                "backgroundImage": "ms-appdata:///roaming/pwsh-pulse.gif",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageStretchMode": "none",
+                "backgroundImageOpacity": 0.5,
                 "closeOnExit": true,
-                "historySize": 9001,
-                "fontFace": "PxPlus IBM VGA8",
-                "fontSize": 13,
-                "useAcrylic": false,
-                "padding": "0, 0, 0, 0",
-                "snapOnInput": true,
+                "colorScheme": "Monokai Night",
                 "experimental.retroTerminalEffect": false,
-                "suppressApplicationTitle": true,
-                "tabTitle": "CMD "
-            },
-            {
-                // cmd.exe profile as Admin
-                "guid": "{0caa0dad-35be-5f56-b2ff-afceeeaa6101}",
-                "name": "CMD ADMIN",
-                "cursorColor": "#FFFFFF",
-                "commandline": "gsudo cmd.exe",
-                "hidden": false,
-                "backgroundImage": "ms-appdata:///roaming/cmd-pulse.gif",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.5,
-                "backgroundImageStretchMode": "none",
-                "colorScheme": "Campbell",
-                "icon": "ms-appdata:///roaming/cmd.png",
-                "startingDirectory": "%USERPROFILE%",
-                "acrylicOpacity": 0.8,
-                "closeOnExit": true,
-                "historySize": 9001,
                 "fontFace": "Delugia Nerd Font",
                 "fontSize": 13,
-                "useAcrylic": true,
+                "historySize": 9001,
+                "icon": "ms-appdata:///roaming/pwsh.png",
                 "padding": "0, 0, 0, 0",
                 "snapOnInput": true,
-                "experimental.retroTerminalEffect": false
+                //"startingDirectory" : "%USERPROFILE%",
                 //"suppressApplicationTitle": true,
                 //"tabTitle": " ",
+                "useAcrylic": true
             },
             {
                 // Profile: SSH
@@ -372,6 +367,12 @@
                 //"tabTitle": " ",
             },
             {
+                "guid": "{042b8a88-f610-5ece-9f11-5ed6af8674ff}",
+                "hidden": false,
+                "name": "Ubuntu20Desk",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
@@ -379,10 +380,40 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
+                "guid": "{6a8a2295-8ba5-581c-8faa-1d37868ec52d}",
+                "hidden": false,
+                "name": "UbuntuDesk",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{4cc7afd2-4af8-54fa-a6e8-d5567ac06b13}",
+                "hidden": false,
+                "name": "ubuntu-DKlhSFyUXP",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{e1ce647c-6455-566a-86be-cf8b6b8e96a6}",
+                "hidden": false,
+                "name": "Ubuntu-demo",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
                 "guid": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
                 "hidden": false,
                 "name": "PowerShell 7 Preview",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
+                "hidden": false,
+                "name": "Alpine",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b2d6503a-d0e6-5c93-b063-25b165a68977}",
+                "hidden": false,
+                "name": "openSUSE-42",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
