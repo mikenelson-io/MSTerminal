@@ -1,19 +1,8 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "confirmCloseAllTabs": false,
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-b6962a402444}",
-    "initialCols": 140,
-    "initialRows": 40,
-    // Add custom keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
-    "keybindings":
+    "actions":
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
         {
             "command":
             {
@@ -23,27 +12,35 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        // Press Ctrl+Shift+F to open the search box
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
-        // Press Ctrl+Shift+, to open the settings UI
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command":
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
+        },
         {
             "command":
             {
                 "action": "openSettings",
                 "target": "settingsUI"
             },
-            "keys": "ctrl+shift+,"
+            "keys": "ctrl+shift+comma"
         },
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
+        {
+            "command":
+            {
+                "action": "scrollDown"
+            },
+            "keys": "ctrl+shift+down"
+        },
         {
             "command":
             {
@@ -53,37 +50,43 @@
             },
             "keys": "alt+shift+d"
         },
-        // Brought over from old profiles.json
         {
-            "command": "closeTab",
-            "keys": "ctrl+w"
-        },
-        {
-            "command": "newTab",
-            "keys": "ctrl+t"
-        },
-        {
-            "command": "nextTab",
+            "command":
+            {
+                "action": "nextTab"
+            },
             "keys": "ctrl+tab"
         },
         {
-            "command": "openSettings",
-            "keys": "ctrl+,"
+            "command":
+            {
+                "action": "closeTab"
+            },
+            "keys": "ctrl+w"
         },
         {
-            "command": "prevTab",
+            "command":
+            {
+                "action": "openSettings"
+            },
+            "keys": "ctrl+comma"
+        },
+        {
+            "command":
+            {
+                "action": "prevTab"
+            },
             "keys": "ctrl+shift+tab"
-        },
-        {
-            "command": "scrollDown",
-            "keys": "ctrl+shift+down"
         },
         {
             "command": "scrollDownPage",
             "keys": "ctrl+shift+pgdn"
         },
         {
-            "command": "scrollUp",
+            "command":
+            {
+                "action": "scrollUp"
+            },
             "keys": "ctrl+shift+up"
         },
         {
@@ -91,6 +94,13 @@
             "keys": "ctrl+shift+pgup"
         }
     ],
+    "confirmCloseAllTabs": false,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-b6962a402444}",
+    "initialCols": 140,
+    "initialRows": 40,
+    "launchMode": "default",
     "multiLinePasteWarning": false,
     "profiles":
     {
@@ -103,17 +113,21 @@
             "backgroundImageStretchMode": "none",
             "colorScheme": "Campbell Powershell",
             "cursorShape": "vintage",
-            "fontFace": "JetBrains Mono",
-            "fontSize": 13,
+            "font":
+            {
+                "face": "JetBrains Mono",
+                "size": 13
+            },
             "icon": "D:\\OneDrive\\Pictures\\cloudshell.png",
             "padding": "35",
+            "startingDirectory": null,
             "suppressApplicationTitle": true,
-            "useAcrylic": false
+            "unfocusedAppearance": {},
+            "useAcrylic": true
         },
         "list":
         [
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\powershell-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -123,8 +137,11 @@
                 "commandline": "powershell.exe",
                 "cursorColor": "#FFFFFF",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "historySize": 9001,
@@ -133,11 +150,59 @@
                 "padding": "35",
                 "snapOnInput": true,
                 "suppressApplicationTitle": true,
-                "tabTitle": "PoSH5.1",
+                "tabTitle": "PoSH 5.1",
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+                "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\powershell-pulse.gif",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.5,
+                "backgroundImageStretchMode": "none",
+                "closeOnExit": "graceful",
+                "colorScheme": "Campbell Powershell",
+                "commandline": "powershell.exe",
+                "cursorColor": "#FFFFFF",
+                "experimental.retroTerminalEffect": false,
+                "font": {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
+                "guid": "{61c54bbd-c2a6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "D:\\OneDrive\\Pictures\\wsl_images\\powershell.png",
+                "name": "PoSH 5.1 NoProfile",
+                "padding": "35",
+                "snapOnInput": true,
+                "suppressApplicationTitle": true,
+                "tabTitle": "PoSH 5.1 NoProfile",
+                "useAcrylic": false
+            },
+            {
+                "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\powershell-pulse.gif",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.5,
+                "backgroundImageStretchMode": "none",
+                "closeOnExit": "graceful",
+                "colorScheme": "Campbell Powershell",
+                "commandline": "cmd.exe /c gsudo powershell.exe",
+                "cursorColor": "#FFFFFF",
+                "experimental.retroTerminalEffect": false,
+                "font": {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
+                "guid": "{61c54bbd-c2c6-5271-42a7-009a87ff44cc}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "D:\\OneDrive\\Pictures\\wsl_images\\powershell.png",
+                "name": "PoSH 5.1 ADMIN",
+                "snapOnInput": true,
+                "suppressApplicationTitle": true,
+                "tabTitle": "PoSH 5.1 ADMIN",
+                "useAcrylic": false
+            },
+            {
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\powershell-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -147,8 +212,11 @@
                 "commandline": "cmd.exe /c gsudo powershell.exe -noprofile",
                 "cursorColor": "#FFFFFF",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
                 "guid": "{61c54bbd-c2c6-5271-42e7-009a87ff44cc}",
                 "hidden": false,
                 "historySize": 9001,
@@ -156,11 +224,10 @@
                 "name": "PoSH 5.1 ADMIN Noprofile",
                 "snapOnInput": true,
                 "suppressApplicationTitle": true,
-                "tabTitle": "PoSH5.1 ADMIN",
+                "tabTitle": "PoSH 5.1 ADMIN",
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\pwshpreview-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -169,8 +236,11 @@
                 "colorScheme": "Campbell Powershell",
                 "cursorColor": "#FFFFFF",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "historySize": 9001,
@@ -179,11 +249,10 @@
                 "snapOnInput": true,
                 "source": "Windows.Terminal.PowershellCore",
                 "suppressApplicationTitle": true,
-                "tabTitle": "PoSH7",
+                "tabTitle": "PoSH 7",
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "ms-appdata:///roaming/pwshpreview-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -193,8 +262,11 @@
                 "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -noprofile",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402444}",
                 "hidden": false,
                 "historySize": 9001,
@@ -202,11 +274,34 @@
                 "name": "PoSH 7 NoProfile",
                 "snapOnInput": true,
                 "suppressApplicationTitle": true,
-                "tabTitle": "PoSH7 NoProfile",
+                "tabTitle": "PoSH 7 NoProfile",
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+                "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\pwshpreview-pulse.gif",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.5,
+                "backgroundImageStretchMode": "none",
+                "closeOnExit": "graceful",
+                "colorScheme": "Campbell Powershell",
+                "commandline": "cmd.exe /c gsudo pwsh.exe",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "font": {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
+                "guid": "{574e775e-2f2a-5b96-ac1e-b6962a402444}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "D:\\OneDrive\\Pictures\\wsl_images\\StoreLogo-Preview.png",
+                "name": "PoSH 7 ADMIN",
+                "snapOnInput": true,
+                "suppressApplicationTitle": true,
+                "tabTitle": "PoSH 7 ADMIN",
+                "useAcrylic": true
+            },
+            {
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\pwshpreview-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -216,8 +311,11 @@
                 "commandline": "cmd.exe /c gsudo pwsh.exe -noprofile",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-b6962a402444}",
                 "hidden": false,
                 "historySize": 9001,
@@ -225,11 +323,24 @@
                 "name": "PoSH 7 ADMIN NoProfile",
                 "snapOnInput": true,
                 "suppressApplicationTitle": true,
-                "tabTitle": "PoSH7 ADMIN",
-                "useAcrylic": false
+                "tabTitle": "PoSH 7 ADMIN NoProfile",
+                "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
+                "guid": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
+                "hidden": false,
+                "icon": "C:\\Users\\Mike\\Pictures\\wsl_images\\pwshpreview-pulse.gif",
+                "name": "PoSH 7 Preview",
+                "source": "Windows.Terminal.PowershellCore",
+                "unfocusedAppearance": {}
+            },
+            {
+                "commandline": "cmd.exe /c gsudo \"C:\\Progra~1\\PowerShell\\7-preview\\pwsh.exe -noprofile\"",
+                "guid": "{b1bca26e-4d96-55ad-bb0b-09bbf6510d3b}",
+                "icon": "C:\\Users\\Mike\\Pictures\\wsl_images\\pwshpreview-pulse.gif",
+                "name": "PoSH 7 Preview ADMIN"
+            },
+            {
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\cmd-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -239,8 +350,11 @@
                 "commandline": "cmd.exe",
                 "cursorColor": "#FFFFFF",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "PxPlus IBM VGA8",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "PxPlus IBM VGA8",
+                    "size": 13
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "historySize": 9001,
@@ -253,7 +367,6 @@
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\cmd-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -263,8 +376,11 @@
                 "commandline": "gsudo cmd.exe",
                 "cursorColor": "#FFFFFF",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "PxPlus IBM VGA8",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "PxPlus IBM VGA8",
+                    "size": 13
+                },
                 "guid": "{0caa0dad-35be-5f56-b2ff-afceeeaa6101}",
                 "hidden": false,
                 "historySize": 9001,
@@ -277,7 +393,6 @@
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "ms-appdata:///roaming/ssh.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -286,8 +401,11 @@
                 "commandline": "ssh mnelson@10.21.185.50",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{b453ae62-5e3d-5e58-b989-0afffec441a4}",
                 "hidden": false,
                 "historySize": 9001,
@@ -300,7 +418,6 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "ms-appdata:///roaming/wsl-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -309,8 +426,11 @@
                 "commandline": "wsl ssh mnelson@10.21.185.50",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0afffec441a4}",
                 "hidden": false,
                 "historySize": 9001,
@@ -323,7 +443,6 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "ms-appdata:///roaming/ssh.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -332,8 +451,11 @@
                 "commandline": "ssh root@10.10.1.1",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0afeeec441a4}",
                 "hidden": false,
                 "historySize": 9001,
@@ -346,7 +468,6 @@
                 "useAcrylic": true
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\wsl-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.5,
@@ -356,8 +477,11 @@
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline",
+                    "size": 13
+                },
                 "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
                 "hidden": false,
                 "historySize": 9001,
@@ -372,32 +496,19 @@
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\ubuntu_pulse.gif",
-                "backgroundImageAlignment": "bottomRight",
-                "backgroundImageOpacity": 0.5,
-                "backgroundImageStretchMode": "none",
-                "closeOnExit": "graceful",
-                "colorScheme": "UbuntuLegit",
-                "cursorColor": "#FFFFFF",
-                "cursorShape": "vintage",
-                "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "font":
+                {
+                    "face": "Meslo LG M for Powerline"
+                },
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
-                "historySize": 9001,
                 "icon": "D:\\OneDrive\\Pictures\\wsl_images\\Ubuntu.png",
-                "name": "Pure Test",
-                "snapOnInput": true,
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\mike",
-                "suppressApplicationTitle": true,
-                "tabTitle": "Pure Test 20.04",
-                "useAcrylic": false
+                "name": "Ubuntu-20.04",
+                "padding": "50",
+                "source": "Windows.Terminal.Wsl"
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\wsl-pulse.gif",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
@@ -406,8 +517,11 @@
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
                 "historySize": 9001,
@@ -423,7 +537,10 @@
             {
                 "colorScheme": "Dark Plus",
                 "commandline": "wsl -d kali-linux kex --sl --wtstart",
-                "fontSize": 13,
+                "font":
+                {
+                    "size": 13
+                },
                 "guid": "{55ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
                 "icon": "C:\\Users\\Mike\\Pictures\\kali-linux.png",
@@ -432,7 +549,6 @@
                 "tabTitle": "Kali X Seamless"
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageOpacity": 0.10000000000000001,
                 "backgroundImageStretchMode": "none",
@@ -441,8 +557,11 @@
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "historySize": 9001,
@@ -452,7 +571,6 @@
                 "useAcrylic": false
             },
             {
-                "acrylicOpacity": 0.80000000000000004,
                 "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\debian.png",
                 "backgroundImageAlignment": "bottomRight",
                 "backgroundImageStretchMode": "none",
@@ -461,8 +579,11 @@
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "JetBrains Mono",
-                "fontSize": 13,
+                "font":
+                {
+                    "face": "JetBrains Mono",
+                    "size": 13
+                },
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "historySize": 9001,
@@ -476,13 +597,41 @@
                 "useAcrylic": false
             },
             {
-                "backgroundImage": "D:\\OneDrive\\Pictures\\wsl_images\\ubuntu_pulse.gif",
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "backgroundImage": "C:\\Users\\Mike\\Pictures\\wsl_images\\opensuse_pulse.png",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageStretchMode": "none",
+                "colorScheme": "Retro",
+                "guid": "{bc2da056-dd06-5879-b969-1dfcefc8d2c7}",
                 "hidden": false,
-                "icon": "D:\\OneDrive\\Pictures\\wsl_images\\Ubuntu.png",
-                "name": "Ubuntu-20.04",
-                "padding": "50",
+                "icon": "C:\\Users\\Mike\\Pictures\\wsl_images\\suseicon.png",
+                "name": "openSUSE-Tumbleweed",
+                "padding": "41",
+                "source": "Windows.Terminal.Wsl",
+                "tabTitle": "openSUSE"
+            },
+            {
+                "guid": "{7bac45c1-022f-50b3-bd6c-4fbe9c28cff6}",
+                "hidden": false,
+                "name": "ubuntu-demotestv2",
                 "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{a9efa386-1deb-51ec-87bd-b0ec69d536e5}",
+                "hidden": false,
+                "name": "ubuntu-demotestv1",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{2cb64609-0863-5f97-b5d8-0666f4f23a06}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{aef885d1-4a86-5ac1-97b6-e9625ca1ddcf}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
